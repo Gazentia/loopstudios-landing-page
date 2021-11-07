@@ -1,0 +1,42 @@
+.jumbotron {
+    padding: 20px;
+    border: 2px solid $white;
+
+    &__title {
+        display: inline-block;
+        color: $white;
+        font-family: "JosefinSans", sans-serif;
+        font-size: 1.75rem;
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: 300;
+        line-height: 1;
+        width: 80%;
+        @include breakpoint-up("sm") {
+            font-size: 3rem;
+            width: 70%;
+        }
+        @include breakpoint-up("lg") {
+            font-size: 4rem;
+            width: 100%;
+        }
+    }
+
+    &--overlay {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        right: 20px;
+        @include breakpoint-up("md") {
+            width: 60%;
+            left: 40px;
+            right: 40px;
+        }
+        @include breakpoint-up("lg") {
+            width: 55%;
+            left: 80px;
+            right: 80px;
+        }
+    }
+}

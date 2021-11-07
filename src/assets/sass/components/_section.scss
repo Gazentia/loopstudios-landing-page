@@ -1,0 +1,108 @@
+.section {
+    position: relative;
+    padding: 100px 20px;
+    @include breakpoint-up("md") {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @include breakpoint-up("lg") {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    &--jumbotron {
+        position: relative;
+    }
+    &--creation {
+        padding-top: 0;
+        .section__title {
+            margin-top: 0;
+            margin-bottom: 50px;
+            @include breakpoint-up("md") {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        @include breakpoint-up("md") {
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 70px;
+        }
+    }
+
+    &__title {
+        color: $black;
+        font-family: "JosefinSans", sans-serif;
+        font-weight: 300;
+        font-size: $font-lg;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 16px;
+        line-height: 0.95;
+
+        @include breakpoint-up("md") {
+            line-height: 1;
+        }
+    }
+
+    &__info {
+        margin: 0;
+        line-height: 1.75;
+    }
+
+    &__body {
+        padding: 0 30px;
+        text-align: center;
+        @include breakpoint-up("md") {
+            text-align: left;
+        }
+        &--overlay {
+            @include breakpoint-up("md") {
+                position: absolute;
+                background-color: #fafafa;
+                width: 55%;
+                top: 36%;
+                right: 0;
+                padding: 55px;
+            }
+            @include breakpoint-up("lg") {
+                position: absolute;
+                background-color: #fafafa;
+                width: 50%;
+                top: 40%;
+                right: 0;
+                padding: 80px;
+            }
+        }
+    }
+
+    &__img {
+        margin-bottom: 50px;
+        @include breakpoint-up("md") {
+        }
+        img {
+            width: 100%;
+        }
+        &--half {
+            img {
+                @include breakpoint-up("md") {
+                    width: 60%;
+                }
+            }
+        }
+        &--bg {
+            height: 650px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    &__footer {
+        text-align: center;
+    }
+}

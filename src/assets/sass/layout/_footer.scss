@@ -1,0 +1,154 @@
+.footer {
+    background-color: $black;
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, auto);
+    justify-items: center;
+    grid-template-areas:
+        "brand"
+        "contact"
+        "menu"
+        "credit"
+        "dev";
+
+    @include breakpoint-up("md") {
+        padding: 40px 40px 20px 40px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+            "brand contact"
+            "menu credit"
+            "dev dev";
+        grid-row-gap: 16px;
+    }
+    @include breakpoint-up("lg") {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    .attribution {
+        grid-area: dev;
+    }
+
+    &__brand {
+        margin-bottom: 34px;
+        grid-area: brand;
+        @include breakpoint-up("md") {
+            justify-self: left;
+            margin-bottom: 0;
+        }
+    }
+
+    &__menu {
+        grid-area: menu;
+        @include breakpoint-up("md") {
+            justify-self: left;
+        }
+    }
+
+    &__items {
+        list-style: none;
+        margin: 0 0 50px 0;
+        padding-left: 0;
+        @include breakpoint-up("md") {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 0;
+        }
+    }
+
+    &__item {
+        margin-bottom: 21px;
+        text-align: center;
+        @include breakpoint-up("md") {
+            margin-bottom: 0;
+            margin-right: 25px;
+        }
+        a {
+            display: inline-block;
+            color: $white;
+
+            &::after {
+                display: inline-block;
+                background-color: transparent;
+                content: "";
+                height: 3px;
+                width: 1%;
+                transition: all 200ms ease-in-out;
+            }
+
+            &:hover,
+            &:active {
+                &::after {
+                    width: 100%;
+                    background-color: $white;
+                }
+            }
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__contact {
+        margin-bottom: 20px;
+        grid-area: contact;
+        @include breakpoint-up("md") {
+            justify-self: right;
+            margin-bottom: 0;
+        }
+    }
+
+    &__socials {
+        padding-left: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        list-style: none;
+    }
+
+    &__credit {
+        grid-area: credit;
+        @include breakpoint-up("md") {
+            justify-self: right;
+        }
+    }
+
+    &__social {
+        margin-right: 18px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        a {
+            position: relative;
+            display: inline-block;
+
+            &::after {
+                display: inline-block;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -10px;
+                background-color: transparent;
+                content: "";
+                height: 3px;
+                width: 1%;
+                transition: all 200ms ease-in-out;
+            }
+
+            &:hover,
+            &:active {
+                &::after {
+                    width: 100%;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}

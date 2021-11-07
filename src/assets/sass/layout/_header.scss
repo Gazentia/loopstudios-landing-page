@@ -1,0 +1,132 @@
+.header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    @include breakpoint-up("md") {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @include breakpoint-up("lg") {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    &__hamburger {
+        > span {
+            display: block;
+            height: 2.5px;
+            width: 30px;
+            background-color: $white;
+            margin-bottom: 6px;
+            transition: all 300ms ease-in-out;
+            transform-origin: 3px 1px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &.open {
+            > span:first-child {
+                transform: rotate(45deg);
+            }
+
+            > span:nth-child(2) {
+                opacity: 0;
+            }
+
+            > span:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+.nav {
+    &__items {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    &__item {
+        margin-right: 25px;
+        a {
+            position: relative;
+            color: $white;
+
+            &::after {
+                display: inline-block;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -10px;
+                background-color: transparent;
+                content: "";
+                height: 3px;
+                width: 1%;
+                transition: all 200ms ease-in-out;
+            }
+
+            &:hover,
+            &:active {
+                &::after {
+                    width: 40%;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}
+
+.mheader {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 100%;
+    background-color: $black;
+    z-index: 2;
+    transition: all 400ms ease-in-out;
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+
+    &.open {
+        right: 0;
+    }
+}
+
+.mnav {
+    &__items {
+        list-style: none;
+        padding: 0 20px;
+        margin: 0;
+    }
+
+    &__item {
+        font-family: "JosefinSans", sans-serif;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 26px;
+
+        a {
+            color: $white;
+            font-size: $font-md;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

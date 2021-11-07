@@ -1,0 +1,27 @@
+.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background-color: transparent;
+    padding: 20px 40px;
+
+    &:focus {
+        outline: none;
+    }
+
+    &--primary {
+        color: $black;
+        border: 2px solid $black;
+        background-color: transparent;
+        padding: 12px 46px;
+        transition: all 200ms ease-in-out;
+        @include breakpoint-up("md") {
+            padding: 10px 36px;
+        }
+        &:hover,
+        &:active {
+            background-color: $black;
+            color: $white;
+        }
+    }
+}
